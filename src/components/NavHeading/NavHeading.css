@@ -1,0 +1,18 @@
+.heading{
+    margin: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #24292e;
+    color: white;
+    padding: 10px;
+}
+.sub-head{
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    gap: 10px; 
+}
+.sub-head h5{
+    font-size: 15px;
+}
