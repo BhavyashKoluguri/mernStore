@@ -28,17 +28,22 @@
     gap: 5px;
     align-items: center;
 }
-.bar{
-    background: none;
-    border: none;
+
+
+
+.burger-nav-bar {
+    position: relative;
+  }
+  
+  .nav-bar {
+    display: flex;
+    flex-direction: column;
     cursor: pointer;
-    padding: 10px;
-}
-.ba{
-    background-color: #333;
-    display: block;
-    height: 3px;
-    margin: 5px 0;
-    transition: transform 0.3s, opacity 0.3s;
+  }
+  
+  .burger-icon {
     width: 25px;
-}
+    height: 3px;
+    background-color: black;
+    margin: 3px 0;
+  }
