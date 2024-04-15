@@ -43,10 +43,13 @@ const NavHeader = () => {
       </div>
       <div className='about'>
       <FaCartPlus />
-      <h4 onClick={toggleBrand}>Brands</h4>
+      <div className='burger-nav-bar'>
+        <h4 onClick={toggleBrand} className='nav-bar'>Brands</h4>
+        {isOpen1 && <Brands />}
+      </div>
       <h4>Shops</h4>
       <h4>Welcome</h4>
-      {isOpen1 && <Brands />}
+      
 
       </div>
     </div>

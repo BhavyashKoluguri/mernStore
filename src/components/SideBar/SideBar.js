@@ -25,7 +25,7 @@ const SideBar = () => {
             <h3>Price</h3>
             <p>{value}</p>
             <Slider trackStyle={{ backgroundColor: "#007bff", height: 10 }}
-                    railStyle={{ backgroundColor: "lightgray", height: 10 }}
+                    railStyle={{ backgroundColor: "white", height: 10 }}
                     handleStyle={{
                       borderColor: "red",
                       height: 15,
@@ -46,7 +46,7 @@ const SideBar = () => {
             <h3>Rating</h3>
             <p>{value1}</p>
             <Slider trackStyle={{ backgroundColor: "#007bff", height: 10 }}
-                    railStyle={{ backgroundColor: "lightgray", height: 10 }}
+                    railStyle={{ backgroundColor: "white", height: 10 }}
                     handleStyle={{
                       borderColor: "red",
                       height: 15,

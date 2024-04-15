@@ -3,10 +3,14 @@ import './NavHeader.css'
 
 const Brands = () => {
   return (
-    <div className='brand_container'>
-      <h1>Hello this is brand</h1>
-      <h2>fjshfs</h2>
-      <p>dedhgwdwghdghwadjdh</p>
+    <div className="menu-bar">
+      <h1>Shop by Category</h1>
+      <div className='menu-bar-link'>
+      <p>Bags</p>
+      <p>Men</p>
+      <p>Shoes</p>
+      <p>Perfumes</p>
+      </div>
     </div>
   );
 }

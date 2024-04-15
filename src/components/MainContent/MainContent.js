@@ -1,8 +1,31 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './MainContent.css'
 import { FcRating } from "react-icons/fc";
+import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 const MainContent = () => {
+
+  const [getimage, setgetimage] = useState([]);
+
+  const getData = async() => {
+    try {
+      const resp = await axios.get('https://course-api.com/react-store-products');
+      const data = resp.data;
+      console.log(data);
+      setgetimage(data);
+      
+      
+    } catch (error) {
+      console.log(error.resp);
+    }
+    
+  }
+
+  useEffect(()=>{
+    getData();
+  },[])
+
   return (
 <>
 <div className='main_container'>
@@ -23,51 +46,29 @@ const MainContent = () => {
 
   </div>
 <div className='image-container'>
-<div className='images'>
-    <img src='./shoes.webp' alt='shoes' className='img'/>
-    <div className='image-info'>
-      <a href='/'>Converse All Star</a>
-      <div className='info'>
-        <p>Hello tbdskjsdjkszhdkdshfjksdbf  fjdshdjdshf chhdjn</p>
 
-      </div>
+
+{getimage.map((img,i)=>{
+ return <div className='images' key={i}>
+  <Link to={`/home/${img.id}`} >
+  <img src={img.image} alt='shoes' className='img'/>
+  </Link>
+  <div className='image-info'>
+    <a href='/'>{img.company}</a>
+    <div className='info'>
+      <p>{img.description}</p>
+
+    </div>
+  </div>  
+  <div className='price-info-rating'>
+    <h2>${img.price}</h2>
+    <p>4.2 <FcRating /></p>
     </div>  
-    <div className='price-info-rating'>
-      <h2>$40</h2>
-      <p>4.2 <FcRating /></p>
-      </div>  
-  </div>
-
-  <div className='images'>
-    <img src='./shoes.webp' alt='shoes' className='img'/>
-    <div className='image-info'>
-      <a href='/'>Converse All Star</a>
-      <div className='info'>
-        <p>Hello tbdskjsdjkszhdkdshfjksdbf  fjdshdjdshf chhdjn</p>
-
-      </div>
-    </div>  
-    <div className='price-info-rating'>
-      <h2>$40</h2>
-      <p>4.2 <FcRating /></p>
-      </div>  
-  </div>
-<div className='images'>
-    <img src='./shoes.webp' alt='shoes' className='img'/>
-    <div className='image-info'>
-      <a href='/'>Converse All Star</a>
-      <div className='info'>
-        <p>Hello tbdskjsdjkszhdkdshfjksdbf  fjdshdjdshf chhdjn</p>
-
-      </div>
-    </div>  
-    <div className='price-info-rating'>
-      <h2>$40</h2>
-      <p>4.2 <FcRating /></p>
-      </div>  
-  </div>
+</div>
+})}
 
   </div>
+  
 
 
 </div>

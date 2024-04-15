@@ -29,8 +29,6 @@
     align-items: center;
 }
 
-
-
 .burger-nav-bar {
     position: relative;
   }
@@ -46,4 +44,30 @@
     height: 3px;
     background-color: black;
     margin: 3px 0;
+  }
+  .menu-bar {
+    position: absolute;
+    top: 100%;
+    background-color: white;
+    border: 1px solid black;
+    padding: 10px;
+    z-index: 999; /* Ensure it's above other content */
+    width: 400px;
+    word-wrap: break-word;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+  }
+  .menu-bar-link{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    min-width: 250px;
+    gap: 20px;
+  }
+  
+  .menu-bar-link p:hover{
+    cursor: pointer;
+    background-color: rgb(219, 236, 251);
   }
