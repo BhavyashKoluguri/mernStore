@@ -10,10 +10,11 @@ const MainContent = () => {
 
   const getData = async() => {
     try {
-      const resp = await axios.get('https://course-api.com/react-store-products');
+      const resp = await axios.get('https://www.course-api.com/react-store-products');
       const data = resp.data;
       console.log(data);
       setgetimage(data);
+      
       
       
     } catch (error) {
@@ -48,7 +49,7 @@ const MainContent = () => {
 <div className='image-container'>
 
 
-{getimage.map((img,i)=>{
+{getimage.slice(0,6).map((img,i)=>{
  return <div className='images' key={i}>
   <Link to={`/home/${img.id}`} >
   <img src={img.image} alt='shoes' className='img'/>
@@ -56,7 +57,7 @@ const MainContent = () => {
   <div className='image-info'>
     <a href='/'>{img.company}</a>
     <div className='info'>
-      <p>{img.description}</p>
+      <p>{img.description.slice(0,150)}</p>
 
     </div>
   </div>  
