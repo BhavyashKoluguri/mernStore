@@ -1,0 +1,26 @@
+.contact_container{
+    background-color: aqua;
+    padding: 20px;
+    width: 80%;
+    margin: 0 auto;
+    flex: 0.6;
+}
+
+
+.contact{
+    background-color: red;
+}
+.name_email{
+    display: flex;
+    margin-top: 30px;
+    justify-content: space-around;
+    
+}
+.name{
+    display: flex;
+    flex-direction: column;
+}
+.email{
+    display: flex;
+    flex-direction: column;
+}

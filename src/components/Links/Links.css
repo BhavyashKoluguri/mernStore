@@ -1,0 +1,39 @@
+.links_container{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+    background-color: lightgray;
+    padding: 10px;
+}
+.topic{
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+.route_links{
+    text-decoration: none;
+    color: #65676b;
+    font-size: 18px;
+}
+.route_links:hover{
+    color: white;
+}
+.form{
+    display: flex;
+    gap: 10px;
+}
+.form input {
+    padding: 10px;
+    border: 1px solid whitesmoke;
+}
+.form button{
+    background-color: white;
+    border: none;
+    cursor: pointer;
+    min-width: 100px;
+}
+.form button:hover{
+    background-color: blue;
+    color: white;
+    transition-duration: 0.5s;
+}

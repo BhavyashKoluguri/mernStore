@@ -1,0 +1,95 @@
+.main_container{
+    flex: 0.7;
+    
+}
+
+.maincontent{
+    background-color: #ccc;
+    height: 60px;
+    margin: 30px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+.information{
+    background-color: #ccc;
+    display: flex;
+    gap: 2px;
+    padding: 15px;
+    
+}
+.dropdown{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 15px;
+}
+.dropdown h4 {
+    font-size: 18px;
+}
+.dropList{
+    padding: 10px;
+    width: 220px;
+    border-color: whitesmoke;
+    margin-right: 30px;
+}
+.image-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    
+    
+}
+.images{
+    margin: 10px 10px;
+    width: 35%;
+    display: flex;
+    column-gap: 10px;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    background-color: lightgray;
+   
+    
+}
+.image-info{
+    display: flex;
+    width: 500px;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-top: -60px;
+   
+}
+.image-info a{
+    font-size: 20px;
+    text-decoration: none;
+}
+.img{
+    max-width: 90%;
+    height: 80%;
+    border-radius: 5px;
+    
+    object-fit: contain;
+    
+}
+.info{
+    max-width: 70%;
+    display: flex;
+   
+}
+.info p{
+    font-size: 18px;
+    line-height: 25px;
+}
+.price-info-rating{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    
+    
+}
+
