@@ -2,8 +2,6 @@ import React from 'react';
 import { LiaShippingFastSolid } from "react-icons/lia";
 import { MdOutlinePayment } from "react-icons/md";
 import { MdCall } from "react-icons/md";
-
-
 import './NavHeading.css';
 
 const NavHeading = () => {

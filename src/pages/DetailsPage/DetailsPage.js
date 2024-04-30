@@ -1,49 +1,70 @@
-import { useParams } from "react-router-dom";
-import axios from "axios";
-import { useEffect, useState } from "react";
+import { Link, useParams } from "react-router-dom";
+import { useEffect, useReducer } from "react";
 import './DetailsPage.css'
+import { useProductContext } from "../../context/ProductContext";
+import productReducer from "../../Reducer/productReducer";
+import CartAmountToggle from "../../components/CartAmountToggle/CartAmountToggle";
+import { useState } from "react";
+import { useCartContext } from "../../context/cartContext";
 
 const DetailsPage = () => {
-  const [detailImage, setdetailImage] = useState("");
-  const [detailinfo, setdetailinfo] = useState("");
+
+  const {addToCart} = useCartContext();  
+  
+  const [amount, setamount] = useState(1);
+
+  const {data} = useProductContext();
+  
+  console.log(data)
+
+  const initialState = {
+    
+    dImage: [],
+    dInfo: [],
+    dPrice:[]
+  };
+  const [state, dispatch] = useReducer(productReducer, initialState)
+
+  const setDecrease = () =>{
+    amount > 1 ? setamount(amount-1):setamount(1);
+  }
+
+  const setIncrease = () =>{
+    setamount(amount+1)
+  }
+
+
+  
+
   const params = useParams();
   console.log(params);
 
   const getImage = async () => {
     try {
-      const resp = await axios.get(
-        `https://www.course-api.com/react-store-products/`
-      );
-      let s = "";
-      let n = "";
-      const getTheImage = resp.data;
-      console.log(getTheImage);
-      for (let i = 0; i < getTheImage.length; i++) {
-        if (getTheImage[i].id === params.id) {
-          s = getTheImage[i].image;
-          n = getTheImage[i].name;
-        } else {
-          continue;
-        }
+      const product = data.find(item => item.id === params.id);
+      if (product) {
+        dispatch({ type: "D_IMAGE", payload: product.image });
+        dispatch({ type: "D_INFO", payload: product.name });
+        dispatch({ type: "D_PRICE", payload: product.price });
       }
-      setdetailImage(s);
-      setdetailinfo(n);
-
     } catch (error) {
-      setdetailImage("Error in image loading")
+      console.error("Error retrieving product details:", error);
     }
   };
+  
 
   useEffect(() => {
     getImage();
-  },[])
+  },[params.id, data])
 
   return (
     <>
     <div className="details_container">
-      <h1>This is {detailinfo}</h1>
-      <img src={detailImage} alt="Imag" />
+      <h1>This is {state.dInfo}</h1>
+      <img src={state.dImage} alt="Imag" className="detail_img"/>
     </div>
+    <CartAmountToggle amount={amount} setDecrease={setDecrease} setIncrease={setIncrease}/>
+    <Link to="/cart" onClick={()=> addToCart(amount, state.dImage, state.dInfo, params.id, state.dPrice)} style={{display:"inline", marginLeft:"48%", textDecoration:"none", backgroundColor:"aqua", padding:"5px"}}>Add to cart</Link>
     </>
   );
 };
