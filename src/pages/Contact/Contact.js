@@ -1,7 +1,12 @@
-import React from 'react';
+
+import { useProductContext } from '../../context/ProductContext';
 import './Contact.css'
 
+
 const Contact = () => {
+
+  const myName = useProductContext();
+
   return (
     <>
     
@@ -13,7 +18,7 @@ const Contact = () => {
       <form>
         <div className='name_email'>
             <div className='name'>
-                <p>Name</p>
+                <p>{myName}</p>
                 <input type='text' placeholder='Your Full Name'/>
             </div>
             <div className='email'>

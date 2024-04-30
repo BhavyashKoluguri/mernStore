@@ -1,34 +1,19 @@
-import React, { useEffect, useState } from 'react';
+
 import './MainContent.css'
 import { FcRating } from "react-icons/fc";
-import axios from 'axios';
 import { Link } from 'react-router-dom';
+import { useProductContext } from '../../context/ProductContext';
+
+
 
 const MainContent = () => {
 
-  const [getimage, setgetimage] = useState([]);
-
-  const getData = async() => {
-    try {
-      const resp = await axios.get('https://www.course-api.com/react-store-products');
-      const data = resp.data;
-      console.log(data);
-      setgetimage(data);
-      
-      
-      
-    } catch (error) {
-      console.log(error.resp);
-    }
-    
-  }
-
-  useEffect(()=>{
-    getData();
-  },[])
+  const {isLoading, data} = useProductContext();
+  
 
   return (
 <>
+
 <div className='main_container'>
   <div className='maincontent'>
     <div className='information'>
@@ -37,25 +22,28 @@ const MainContent = () => {
     </div>
     <div className='dropdown'>
       <h4>Sort by</h4>
-      <label for="cars"></label>
+      <form action='#'>
+      <label htmlFor="cars"></label>
         <select id="cars" name="cars" className='dropList'>
-            <option value="volvo">Newest First</option>
-            <option value="saab">Price High to Low</option>
-            <option value="fiat">Price Low to High</option>
+            <option value="new">Newest First</option>
+            <option value="highest">Price High to Low</option>
+            <option value="lowest">Price Low to High</option>
         </select>
+      </form>
     </div>
 
   </div>
 <div className='image-container'>
 
 
-{getimage.slice(0,6).map((img,i)=>{
+
+{isLoading?<h1> ...Loading </h1>: data.slice(0,6).map((img,i)=>{
  return <div className='images' key={i}>
   <Link to={`/home/${img.id}`} >
   <img src={img.image} alt='shoes' className='img'/>
   </Link>
   <div className='image-info'>
-    <a href='/'>{img.company}</a>
+    <a href='/'>{img.company}</a> 
     <div className='info'>
       <p>{img.description.slice(0,150)}</p>
 
@@ -67,8 +55,9 @@ const MainContent = () => {
     </div>  
 </div>
 })}
-
   </div>
+
+  
   
 
 

@@ -1,0 +1,15 @@
+.cart-button{
+    display: flex;
+    justify-content: center;
+    
+    
+}
+.cart-button div {
+    padding: 10px;
+}
+.cart-button button{
+    background-color: red;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
