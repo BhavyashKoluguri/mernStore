@@ -45,8 +45,8 @@ const SideBar = () => {
         <div className='rating'>
             <h3>Rating</h3>
             <p>{value1}</p>
-            <Slider trackStyle={{ backgroundColor: "#007bff", height: 10 }}
-                    railStyle={{ backgroundColor: "white", height: 10 }}
+            <Slider trackStyle={{ backgroundColor: "#007bff", height: 15 }}
+                    railStyle={{ backgroundColor: "white", height: 15 }}
                     handleStyle={{
                       borderColor: "red",
                       height: 15,
@@ -56,9 +56,9 @@ const SideBar = () => {
                       backgroundColor: "red"
                       
                     }}
-                    dotStyle={{borderColor: 'white', height: 15, width: 15}}
+                    dotStyle={{borderColor: 'white', height: 15, width: 15, top: 0}}
                     activeDotStyle={{borderColor: 'red', height: 15, width: 15}}
-                    dots={{height: 10}}
+                    dots={{height: 15}}
                     min={0}
                     max={5}
                     value={value1}

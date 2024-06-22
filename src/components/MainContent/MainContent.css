@@ -45,6 +45,7 @@
 .images{
     margin: 10px 10px;
     width: 35%;
+    object-fit: cover;
     display: flex;
     column-gap: 10px;
     flex-direction: column;

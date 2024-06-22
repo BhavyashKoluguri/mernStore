@@ -38,6 +38,8 @@ const Cart = () => {
           </div>
         </div>
 
+        
+
         {cart.map((scart, i) => {
           return (
             <div className="cart-container2" key={i}>
