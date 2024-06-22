@@ -1,15 +1,21 @@
 
 .cart{
+    width: 100%;
     margin-top: 10px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 10px;
+    background-color: lightgray;
+    padding: 10px;
 }
 .cart-container{
     
     height: 5px;
     display: flex;
+    padding: 4px;
+    border-bottom: 1px solid black;
        
 }
 .product-price{

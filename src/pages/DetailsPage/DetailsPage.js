@@ -63,8 +63,10 @@ const DetailsPage = () => {
       <h1>This is {state.dInfo}</h1>
       <img src={state.dImage} alt="Imag" className="detail_img"/>
     </div>
+    <div className="plus-minus">
     <CartAmountToggle amount={amount} setDecrease={setDecrease} setIncrease={setIncrease}/>
-    <Link to="/cart" onClick={()=> addToCart(amount, state.dImage, state.dInfo, params.id, state.dPrice)} style={{display:"inline", marginLeft:"48%", textDecoration:"none", backgroundColor:"aqua", padding:"5px"}}>Add to cart</Link>
+    <Link to="/cart" onClick={()=> addToCart(amount, state.dImage, state.dInfo, params.id, state.dPrice)} className="cart-btn">Add to cart</Link>
+    </div>
     </>
   );
 };

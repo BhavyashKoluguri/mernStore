@@ -37,7 +37,7 @@ const MainContent = () => {
 
 
 
-{isLoading?<h1> ...Loading </h1>: data.slice(0,6).map((img,i)=>{
+{isLoading?<h1> ...Loading </h1>: data.slice(0,10).map((img,i)=>{
  return <div className='images' key={i}>
   <Link to={`/home/${img.id}`} >
   <img src={img.image} alt='shoes' className='img'/>
