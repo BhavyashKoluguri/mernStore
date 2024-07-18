@@ -1,12 +1,12 @@
 import React from 'react';
-import './CartAmountToggle.css'
+import './CartAmountToggle.css';
 
-const CartAmountToggle = ({amount, setDecrease, setIncrease}) => {
+const CartAmountToggle = ({ amount, setDecrease, setIncrease }) => {
   return (
-    <div className='cart-button'>
-      <button onClick={()=> setDecrease()}>-</button>
-      <div>{amount}</div>
-      <button onClick={()=> setIncrease()}>+</button>
+    <div className='cart-amount-toggle'>
+      <button onClick={() => setDecrease()} className="toggle-button">-</button>
+      <div className="amount">{amount}</div>
+      <button onClick={() => setIncrease()} className="toggle-button">+</button>
     </div>
   );
 }

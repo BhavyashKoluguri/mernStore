@@ -26,11 +26,13 @@ const handleLogin = ()=>{
       <>
         <BrowserRouter>
         <div className='login_logout'>
-        {loggedIn?<Link to="/home" onClick={handleLogin}>Login</Link>:""}
+        {loggedIn?<Link to="/home" onClick={handleLogin} className='login-btn'>Login</Link>:""}
         {loggedOut?<Link to="/" onClick={handleLogin}>Logut</Link>:""}
         </div>
-        <NavHeader />
-        <NavHeading />
+        {loggedIn ? "": <NavHeader />}
+        {loggedIn ? "": <NavHeading />}
+        
+        
         <Routes>
           <Route path='/home' element={<Home />}></Route>
           <Route path='/home/:id' element={<DetailsPage />}></Route>
