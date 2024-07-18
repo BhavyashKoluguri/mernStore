@@ -1,15 +1,37 @@
-.cart-button{
+/* CartAmountToggle.css */
+
+.cart-amount-toggle {
     display: flex;
-    justify-content: center;
-    
-    
-}
-.cart-button div {
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .cart-amount-toggle .amount {
     padding: 10px;
-}
-.cart-button button{
-    background-color: red;
-    width: 20px;
-    height: 20px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    min-width: 40px;
+  }
+  
+  .toggle-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
     cursor: pointer;
-}
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .toggle-button:hover {
+    background-color: #0056b3;
+  }
+  
+  .toggle-button:active {
+    background-color: #004494;
+  }
+  

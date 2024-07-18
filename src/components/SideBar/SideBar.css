@@ -1,29 +1,35 @@
-.sidebar_container{
+.sidebar_container {
     flex: 0.2;
     margin-top: 7%;
-}
-
-.sidebar{
-    background-color: lightgray;
+  }
+  
+  .sidebar {
+    background-color: #f0f0f0;
     margin-top: 30px;
     color: black;
     padding: 20px;
     display: flex;
     flex-direction: column;
-    align-items: end;
- 
-}
-.price{
-    margin-bottom: 100px;
+    align-items: center;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .price,
+  .rating {
     width: 100%;
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
-}
-.rating{
-    margin-bottom: 50px;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-}
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  /* Adjustments for the Slider */
+  .rc-slider-dot {
+    border-color: #ccc; /* Color of dots */
+  }
+  
+  .rc-slider-dot-active {
+    border-color: #007bff; /* Active dot color */
+  }
+  

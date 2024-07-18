@@ -1,76 +1,67 @@
 import React, { useState } from 'react';
 import './SideBar.css';
-
 import 'rc-slider/assets/index.css';
 import Slider from 'rc-slider';
 
 const SideBar = () => {
-  
-  const [value, setvalue] = useState(20);
-  const [value1, setvalue1] = useState(0);
+  const [priceValue, setPriceValue] = useState(20);
+  const [ratingValue, setRatingValue] = useState(0);
 
-  const handleChange2 = (newValue) => {
-    setvalue1(newValue);
-  }
+  const handlePriceChange = (newValue) => {
+    setPriceValue(newValue);
+  };
 
-  const handleChange = (newValue) => {
-    console.log("new Value", newValue);
-    setvalue(newValue);
+  const handleRatingChange = (newValue) => {
+    setRatingValue(newValue);
   };
 
   return (
     <div className='sidebar_container'>
       <div className='sidebar'>
         <div className='price'>
-            <h3>Price</h3>
-            <p>{value}</p>
-            <Slider trackStyle={{ backgroundColor: "#007bff", height: 10 }}
-                    railStyle={{ backgroundColor: "white", height: 10 }}
-                    handleStyle={{
-                      borderColor: "red",
-                      height: 15,
-                      width: 15,
-                      marginLeft: -2,
-                      marginTop: -3,
-                      backgroundColor: "red"
-                    }}
-                    min={0}
-                    max={100}
-                    value={value}
-                    onChange={handleChange}
-            />
+          <h3>Price</h3>
+          <p>${priceValue}</p>
+          <Slider
+            trackStyle={{ backgroundColor: '#007bff', height: 10 }}
+            railStyle={{ backgroundColor: '#ccc', height: 10 }}
+            handleStyle={{
+              borderColor: '#007bff',
+              height: 20,
+              width: 20,
+              marginLeft: -10,
+              marginTop: -5,
+              backgroundColor: '#007bff',
+            }}
+            min={0}
+            max={100}
+            value={priceValue}
+            onChange={handlePriceChange}
+          />
         </div>
-
 
         <div className='rating'>
-            <h3>Rating</h3>
-            <p>{value1}</p>
-            <Slider trackStyle={{ backgroundColor: "#007bff", height: 15 }}
-                    railStyle={{ backgroundColor: "white", height: 15 }}
-                    handleStyle={{
-                      borderColor: "red",
-                      height: 15,
-                      width: 15,
-                      marginLeft: -2,
-                      marginTop: -3,
-                      backgroundColor: "red"
-                      
-                    }}
-                    dotStyle={{borderColor: 'white', height: 15, width: 15, top: 0}}
-                    activeDotStyle={{borderColor: 'red', height: 15, width: 15}}
-                    dots={{height: 15}}
-                    min={0}
-                    max={5}
-                    value={value1}
-                    onChange={handleChange2}
-                    
-                    
-            />
+          <h3>Rating</h3>
+          <p>{ratingValue}</p>
+          <Slider
+            trackStyle={{ backgroundColor: '#007bff', height: 10 }}
+            railStyle={{ backgroundColor: '#ccc', height: 10 }}
+            handleStyle={{
+              borderColor: '#007bff',
+              height: 20,
+              width: 20,
+              marginLeft: -10,
+              marginTop: -5,
+              backgroundColor: '#007bff',
+            }}
+            min={0}
+            max={5}
+            value={ratingValue}
+            onChange={handleRatingChange}
+          />
         </div>
-      
-    </div>
+      </div>
     </div>
   );
-}
+};
 
 export default SideBar;
