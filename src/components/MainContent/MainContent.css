@@ -1,96 +1,109 @@
-.main_container{
+.main_container {
     flex: 0.7;
-    
+    padding: 20px;
+    box-sizing: border-box;
 }
 
-.maincontent{
+.maincontent {
     background-color: #ccc;
     height: 60px;
     margin: 30px 40px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    
 }
-.information{
-    background-color: #ccc;
+
+.information {
     display: flex;
-    gap: 2px;
+    gap: 10px;
     padding: 15px;
-    
 }
-.dropdown{
+
+.dropdown {
     display: flex;
     align-items: center;
-    gap: 5px;
+    gap: 10px;
     padding: 15px;
 }
+
 .dropdown h4 {
     font-size: 18px;
 }
-.dropList{
+
+.dropList {
     padding: 10px;
     width: 220px;
-    border-color: whitesmoke;
-    margin-right: 30px;
+    border: 1px solid #ccc;
 }
-.image-container{
+
+.image-container {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     flex-wrap: wrap;
-    
-    
 }
-.images{
-    margin: 10px 10px;
-    width: 35%;
-    object-fit: cover;
+
+.images {
+    margin: 10px;
+    width: 30%;
     display: flex;
-    column-gap: 10px;
     flex-direction: column;
     align-items: center;
     gap: 10px;
     background-color: lightgray;
-   
-    
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
-.image-info{
+
+.image-info {
     display: flex;
-    width: 500px;
     flex-direction: column;
     align-items: center;
     gap: 10px;
-    margin-top: -60px;
-   
-}
-.image-info a{
-    font-size: 20px;
-    text-decoration: none;
-}
-.img{
-    max-width: 90%;
-    height: 80%;
-    border-radius: 5px;
-    
-    object-fit: contain;
-    
-}
-.info{
-    max-width: 70%;
-    display: flex;
-   
-}
-.info p{
-    font-size: 18px;
-    line-height: 25px;
-}
-.price-info-rating{
     width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    
-    
 }
 
+.image-info a {
+    font-size: 20px;
+    text-decoration: none;
+    color: #333;
+}
+
+.img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.info {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.info p {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.price-info-rating {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    border-top: 1px solid #ddd;
+}
+
+.price-info-rating h2 {
+    font-size: 22px;
+    color: #333;
+}
+
+.price-info-rating p {
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+}
